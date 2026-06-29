@@ -45,3 +45,40 @@ To design and simulate a modular RISC-V based Quantum-Classical System-on-Chip (
 - There is a growing need for a modular Quantum-Classical System-on-Chip (SoC) architecture that integrates a RISC-V processor with dedicated quantum communication control modules to improve flexibility, scalability, and future extensibility.
 
 - This project proposes the design and simulation of a modular RISC-V based Quantum-Classical SoC capable of managing and verifying quantum communication workflows through a simulation-based hardware architecture, providing a foundation for future quantum communication systems.
+
+## Project Scope
+
+### Included in Version 1
+
+* Design and simulation of a modular RISC-V based Quantum-Classical SoC architecture.
+* Development of a RISC-V control subsystem for managing quantum communication modules.
+* Design of a Quantum Instruction Decoder.
+* Design of a Quantum Scheduler.
+* Development of a Quantum Memory Controller for logical qubit information management.
+* Development of a Quantum Key Distribution (QKD) Engine.
+* Design of a Noise Monitoring module.
+* Integration of all modules using a standard on-chip interconnect.
+* Functional verification of the complete SoC through simulation.
+* Development using Verilog/SystemVerilog with a modular RTL architecture.
+
+### Not Included in Version 1
+
+* Physical quantum hardware implementation.
+* Fabrication of an ASIC chip.
+* Real qubit manipulation or quantum state computation.
+* FPGA implementation.
+* Quantum teleportation engine.
+* Entanglement controller.
+* Quantum error correction hardware.
+* Quantum networking infrastructure.
+* Universal quantum computing support.
+
+### Future Scope
+
+* Integration of Quantum Teleportation Engine.
+* Entanglement Management Controller.
+* Quantum Error Correction Accelerator.
+* Network-on-Chip (NoC) architecture.
+* FPGA prototyping.
+* RTL-to-GDSII implementation.
+* Universal Quantum-Classical SoC supporting multiple quantum applications.
