@@ -1,0 +1,52 @@
+$date
+	Sat Jul 04 23:58:36 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module instruction_memory_tb $end
+$var wire 32 ! instruction [31:0] $end
+$var parameter 32 " XLEN $end
+$var reg 32 # address [31:0] $end
+$scope module dut $end
+$var wire 32 $ address [31:0] $end
+$var wire 32 % instruction [31:0] $end
+$var parameter 32 & DEPTH $end
+$var parameter 152 ' MEM_FILE $end
+$var parameter 32 ( XLEN $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100000 (
+b1110011011010010110110100101111011010000110010101111000001011110111000001110010011011110110011101110010011000010110110100101110011010000110010101111000 '
+b100000000 &
+b100000 "
+$end
+#0
+$dumpvars
+b10100000000000010010011 %
+b0 $
+b0 #
+b10100000000000010010011 !
+$end
+#10000
+b100000000000000100010011 !
+b100000000000000100010011 %
+b100 #
+b100 $
+#20000
+b1000001000000110110011 !
+b1000001000000110110011 %
+b1000 #
+b1000 $
+#30000
+b10011 !
+b10011 %
+b1100 #
+b1100 $
+#40000
