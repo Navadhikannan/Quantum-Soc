@@ -1,0 +1,273 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001aabaead3e0 .scope module, "instruction_fetch_top_tb" "instruction_fetch_top_tb" 2 2;
+ .timescale -9 -12;
+P_000001aabaeadc80 .param/l "XLEN" 0 2 4, +C4<00000000000000000000000000100000>;
+v000001aabaf202d0_0 .var "branch_taken", 0 0;
+v000001aabaf21bd0_0 .var "branch_target", 31 0;
+v000001aabaf20550_0 .var "clk", 0 0;
+v000001aabaf20cd0_0 .var "if_id_write", 0 0;
+v000001aabaf21810_0 .net "instruction_out", 31 0, v000001aabaeb6520_0;  1 drivers
+v000001aabaf20af0_0 .var "jump_taken", 0 0;
+v000001aabaf21d10_0 .var "jump_target", 31 0;
+v000001aabaf21090_0 .net "pc_out", 31 0, v000001aabaec4050_0;  1 drivers
+v000001aabaf218b0_0 .var "pc_write", 0 0;
+v000001aabaf21e50_0 .var "reset", 0 0;
+S_000001aabaeb6200 .scope module, "dut" "instruction_fetch_top" 2 35, 3 7 0, S_000001aabaead3e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "branch_taken";
+    .port_info 3 /INPUT 32 "branch_target";
+    .port_info 4 /INPUT 1 "jump_taken";
+    .port_info 5 /INPUT 32 "jump_target";
+    .port_info 6 /INPUT 1 "pc_write";
+    .port_info 7 /INPUT 1 "if_id_write";
+    .port_info 8 /OUTPUT 32 "pc_out";
+    .port_info 9 /OUTPUT 32 "instruction_out";
+P_000001aabaeadb80 .param/l "XLEN" 0 3 8, +C4<00000000000000000000000000100000>;
+v000001aabaf1ee90_0 .net "branch_taken", 0 0, v000001aabaf202d0_0;  1 drivers
+v000001aabaf1ef30_0 .net "branch_target", 31 0, v000001aabaf21bd0_0;  1 drivers
+v000001aabaf1e2b0_0 .net "clk", 0 0, v000001aabaf20550_0;  1 drivers
+v000001aabaf1e8f0_0 .net "if_id_write", 0 0, v000001aabaf20cd0_0;  1 drivers
+v000001aabaf1e990_0 .net "instruction_out", 31 0, v000001aabaeb6520_0;  alias, 1 drivers
+v000001aabaf1ead0_0 .net "instruction_wire", 31 0, L_000001aabaec7410;  1 drivers
+v000001aabaf1e350_0 .net "jump_taken", 0 0, v000001aabaf20af0_0;  1 drivers
+v000001aabaf1ec10_0 .net "jump_target", 31 0, v000001aabaf21d10_0;  1 drivers
+v000001aabaf1e3f0_0 .net "next_pc_wire", 31 0, v000001aabaf1eb70_0;  1 drivers
+v000001aabaf1e5d0_0 .net "pc_out", 31 0, v000001aabaec4050_0;  alias, 1 drivers
+v000001aabaf1e530_0 .net "pc_wire", 31 0, v000001aabaf1efd0_0;  1 drivers
+v000001aabaf1ecb0_0 .net "pc_write", 0 0, v000001aabaf218b0_0;  1 drivers
+v000001aabaf21db0_0 .net "reset", 0 0, v000001aabaf21e50_0;  1 drivers
+S_000001aabaeb6390 .scope module, "if_id_inst" "if_id" 3 80, 4 8 0, S_000001aabaeb6200;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "write_enable";
+    .port_info 3 /INPUT 32 "pc_in";
+    .port_info 4 /INPUT 32 "instruction_in";
+    .port_info 5 /OUTPUT 32 "pc_out";
+    .port_info 6 /OUTPUT 32 "instruction_out";
+P_000001aabaeadd40 .param/l "XLEN" 0 4 9, +C4<00000000000000000000000000100000>;
+v000001aabaeabb60_0 .net "clk", 0 0, v000001aabaf20550_0;  alias, 1 drivers
+v000001aabaeabfb0_0 .net "instruction_in", 31 0, L_000001aabaec7410;  alias, 1 drivers
+v000001aabaeb6520_0 .var "instruction_out", 31 0;
+v000001aabaeb65c0_0 .net "pc_in", 31 0, v000001aabaf1efd0_0;  alias, 1 drivers
+v000001aabaec4050_0 .var "pc_out", 31 0;
+v000001aabaec40f0_0 .net "reset", 0 0, v000001aabaf21e50_0;  alias, 1 drivers
+v000001aabaec4190_0 .net "write_enable", 0 0, v000001aabaf20cd0_0;  alias, 1 drivers
+E_000001aabaeae300 .event posedge, v000001aabaeabb60_0;
+S_000001aabaec4230 .scope module, "imem_inst" "instruction_memory" 3 69, 5 8 0, S_000001aabaeb6200;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "address";
+    .port_info 1 /OUTPUT 32 "instruction";
+P_000001aabaec43c0 .param/l "DEPTH" 0 5 10, +C4<00000000000000000000000100000000>;
+P_000001aabaec43f8 .param/str "MEM_FILE" 0 5 11, "sim/hex/program.hex";
+P_000001aabaec4430 .param/l "XLEN" 0 5 9, +C4<00000000000000000000000000100000>;
+L_000001aabaec7410 .functor BUFZ 32, L_000001aabaf213b0, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>;
+v000001aabaebeea0_0 .net *"_ivl_0", 31 0, L_000001aabaf213b0;  1 drivers
+v000001aabaebef40_0 .net *"_ivl_3", 7 0, L_000001aabaf214f0;  1 drivers
+v000001aabaebefe0_0 .net *"_ivl_4", 9 0, L_000001aabaf20f50;  1 drivers
+L_000001aabaf220b8 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v000001aabaebf080_0 .net *"_ivl_7", 1 0, L_000001aabaf220b8;  1 drivers
+v000001aabaebf120_0 .net "address", 31 0, v000001aabaf1efd0_0;  alias, 1 drivers
+v000001aabaf1edf0_0 .net "instruction", 31 0, L_000001aabaec7410;  alias, 1 drivers
+v000001aabaf1ed50 .array "memory", 255 0, 31 0;
+L_000001aabaf213b0 .array/port v000001aabaf1ed50, L_000001aabaf20f50;
+L_000001aabaf214f0 .part v000001aabaf1efd0_0, 2, 8;
+L_000001aabaf20f50 .concat [ 8 2 0 0], L_000001aabaf214f0, L_000001aabaf220b8;
+S_000001aabaeb9ec0 .scope module, "next_pc_inst" "next_pc_logic" 3 40, 6 8 0, S_000001aabaeb6200;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "current_pc";
+    .port_info 1 /INPUT 1 "branch_taken";
+    .port_info 2 /INPUT 32 "branch_target";
+    .port_info 3 /INPUT 1 "jump_taken";
+    .port_info 4 /INPUT 32 "jump_target";
+    .port_info 5 /OUTPUT 32 "next_pc";
+P_000001aabaeb0320 .param/l "INSTR_SIZE" 1 6 21, C4<00000000000000000000000000000100>;
+P_000001aabaeb0358 .param/l "XLEN" 0 6 9, +C4<00000000000000000000000000100000>;
+v000001aabaf1e670_0 .net "branch_taken", 0 0, v000001aabaf202d0_0;  alias, 1 drivers
+v000001aabaf1e490_0 .net "branch_target", 31 0, v000001aabaf21bd0_0;  alias, 1 drivers
+v000001aabaf1e7b0_0 .net "current_pc", 31 0, v000001aabaf1efd0_0;  alias, 1 drivers
+v000001aabaf1e850_0 .net "jump_taken", 0 0, v000001aabaf20af0_0;  alias, 1 drivers
+v000001aabaf1e0d0_0 .net "jump_target", 31 0, v000001aabaf21d10_0;  alias, 1 drivers
+v000001aabaf1eb70_0 .var "next_pc", 31 0;
+E_000001aabaeadbc0/0 .event anyedge, v000001aabaf1e850_0, v000001aabaf1e0d0_0, v000001aabaf1e670_0, v000001aabaf1e490_0;
+E_000001aabaeadbc0/1 .event anyedge, v000001aabaeb65c0_0;
+E_000001aabaeadbc0 .event/or E_000001aabaeadbc0/0, E_000001aabaeadbc0/1;
+S_000001aabaeba050 .scope module, "pc_inst" "program_counter" 3 55, 7 8 0, S_000001aabaeb6200;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "pc_write";
+    .port_info 3 /INPUT 32 "next_pc";
+    .port_info 4 /OUTPUT 32 "pc";
+P_000001aabaeafda0 .param/l "RESET_PC" 0 7 10, C4<00000000000000000000000000000000>;
+P_000001aabaeafdd8 .param/l "XLEN" 0 7 9, +C4<00000000000000000000000000100000>;
+v000001aabaf1e710_0 .net "clk", 0 0, v000001aabaf20550_0;  alias, 1 drivers
+v000001aabaf1ea30_0 .net "next_pc", 31 0, v000001aabaf1eb70_0;  alias, 1 drivers
+v000001aabaf1efd0_0 .var "pc", 31 0;
+v000001aabaf1e170_0 .net "pc_write", 0 0, v000001aabaf218b0_0;  alias, 1 drivers
+v000001aabaf1e210_0 .net "reset", 0 0, v000001aabaf21e50_0;  alias, 1 drivers
+    .scope S_000001aabaeb9ec0;
+T_0 ;
+    %wait E_000001aabaeadbc0;
+    %load/vec4 v000001aabaf1e850_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %load/vec4 v000001aabaf1e0d0_0;
+    %store/vec4 v000001aabaf1eb70_0, 0, 32;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v000001aabaf1e670_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.2, 8;
+    %load/vec4 v000001aabaf1e490_0;
+    %store/vec4 v000001aabaf1eb70_0, 0, 32;
+    %jmp T_0.3;
+T_0.2 ;
+    %load/vec4 v000001aabaf1e7b0_0;
+    %addi 4, 0, 32;
+    %store/vec4 v000001aabaf1eb70_0, 0, 32;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_000001aabaeba050;
+T_1 ;
+    %wait E_000001aabaeae300;
+    %load/vec4 v000001aabaf1e210_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %pushi/vec4 0, 0, 32;
+    %assign/vec4 v000001aabaf1efd0_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v000001aabaf1e170_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.2, 8;
+    %load/vec4 v000001aabaf1ea30_0;
+    %assign/vec4 v000001aabaf1efd0_0, 0;
+    %jmp T_1.3;
+T_1.2 ;
+    %load/vec4 v000001aabaf1efd0_0;
+    %assign/vec4 v000001aabaf1efd0_0, 0;
+T_1.3 ;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_000001aabaec4230;
+T_2 ;
+    %vpi_call 5 28 "$readmemh", P_000001aabaec43f8, v000001aabaf1ed50 {0 0 0};
+    %end;
+    .thread T_2;
+    .scope S_000001aabaeb6390;
+T_3 ;
+    %wait E_000001aabaeae300;
+    %load/vec4 v000001aabaec40f0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.0, 8;
+    %pushi/vec4 0, 0, 32;
+    %assign/vec4 v000001aabaec4050_0, 0;
+    %pushi/vec4 0, 0, 32;
+    %assign/vec4 v000001aabaeb6520_0, 0;
+    %jmp T_3.1;
+T_3.0 ;
+    %load/vec4 v000001aabaec4190_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.2, 8;
+    %load/vec4 v000001aabaeb65c0_0;
+    %assign/vec4 v000001aabaec4050_0, 0;
+    %load/vec4 v000001aabaeabfb0_0;
+    %assign/vec4 v000001aabaeb6520_0, 0;
+T_3.2 ;
+T_3.1 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_000001aabaead3e0;
+T_4 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001aabaf20550_0, 0, 1;
+T_4.0 ;
+    %delay 5000, 0;
+    %load/vec4 v000001aabaf20550_0;
+    %inv;
+    %store/vec4 v000001aabaf20550_0, 0, 1;
+    %jmp T_4.0;
+    %end;
+    .thread T_4;
+    .scope S_000001aabaead3e0;
+T_5 ;
+    %vpi_call 2 69 "$dumpfile", "instruction_fetch_top.vcd" {0 0 0};
+    %vpi_call 2 70 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001aabaead3e0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001aabaf21e50_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001aabaf202d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001aabaf20af0_0, 0, 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000001aabaf21bd0_0, 0, 32;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000001aabaf21d10_0, 0, 32;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001aabaf218b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001aabaf20cd0_0, 0, 1;
+    %delay 12000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001aabaf21e50_0, 0, 1;
+    %delay 40000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001aabaf202d0_0, 0, 1;
+    %pushi/vec4 16, 0, 32;
+    %store/vec4 v000001aabaf21bd0_0, 0, 32;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001aabaf202d0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001aabaf20af0_0, 0, 1;
+    %pushi/vec4 32, 0, 32;
+    %store/vec4 v000001aabaf21d10_0, 0, 32;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001aabaf20af0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001aabaf218b0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001aabaf218b0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001aabaf20cd0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001aabaf20cd0_0, 0, 1;
+    %delay 20000, 0;
+    %vpi_call 2 148 "$finish" {0 0 0};
+    %end;
+    .thread T_5;
+    .scope S_000001aabaead3e0;
+T_6 ;
+    %vpi_call 2 158 "$monitor", "Time=%0t | PC=%h | Instruction=%h | Branch=%b | Jump=%b", $time, v000001aabaf21090_0, v000001aabaf21810_0, v000001aabaf202d0_0, v000001aabaf20af0_0 {0 0 0};
+    %end;
+    .thread T_6;
+# The file index is used to find the file name in the following table.
+:file_names 8;
+    "N/A";
+    "<interactive>";
+    "tb/cpu/fetch/instruction_fetch_top_tb.v";
+    "rtl/cpu/fetch/instruction_fetch_top.v";
+    "rtl/cpu/pipeline/if_id.v";
+    "rtl/cpu/fetch/instruction_memory.v";
+    "rtl/cpu/fetch/next_pc_logic.v";
+    "rtl/cpu/fetch/program_counter.v";
