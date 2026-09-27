@@ -10,7 +10,8 @@ module if_id #(
 )(
     input  wire             clk,
     input  wire             reset,
-    input  wire             write_enable,
+    input  wire write_enable,
+    input  wire flush,
 
     input  wire [XLEN-1:0]  pc_in,
     input  wire [31:0]      instruction_in,
@@ -22,15 +23,21 @@ module if_id #(
 always @(posedge clk) begin
 
     if (reset) begin
-        pc_out          <= 0;
-        instruction_out <= 0;
+        pc_out          <= 32'd0;
+        instruction_out <= 32'd0;
+    end
+
+    else if (flush) begin
+        pc_out          <= 32'd0;
+
+        // RV32I NOP = addi x0,x0,0
+        instruction_out <= 32'h00000013;
     end
 
     else if (write_enable) begin
         pc_out          <= pc_in;
         instruction_out <= instruction_in;
     end
-
 end
 
 endmodule

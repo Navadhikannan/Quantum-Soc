@@ -22,7 +22,13 @@ always @(posedge clk) begin
     else if (pc_write)
         pc <= next_pc;
     else
-        pc <= pc;      // Hold current PC
+        pc <= pc;
+end
+
+// Debug
+always @(posedge clk) begin
+    if (!reset)
+        $display("PC=%h NEXT_PC=%h WRITE=%b", pc, next_pc, pc_write);
 end
 
 endmodule

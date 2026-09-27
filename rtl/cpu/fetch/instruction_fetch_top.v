@@ -18,6 +18,7 @@ module instruction_fetch_top #(
 
     input  wire             pc_write,
     input  wire             if_id_write,
+    
 
     output wire [XLEN-1:0]  pc_out,
     output wire [31:0]      instruction_out
@@ -30,6 +31,8 @@ module instruction_fetch_top #(
     wire [XLEN-1:0] pc_wire;
     wire [XLEN-1:0] next_pc_wire;
     wire [31:0]     instruction_wire;
+    wire flush_if;
+    assign flush_if = branch_taken | jump_taken;
 
     //========================================================
     // Next PC Logic
@@ -81,6 +84,7 @@ module instruction_fetch_top #(
         .clk            (clk),
         .reset          (reset),
         .write_enable   (if_id_write),
+        .flush(flush_if),
 
         .pc_in          (pc_wire),
         .instruction_in (instruction_wire),

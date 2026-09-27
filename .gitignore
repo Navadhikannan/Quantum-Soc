@@ -1,0 +1,33 @@
+# Simulation outputs
+*.vcd
+*.vvp
+*.exe
+*.out
+*.o
+*.a
+*.so
+
+# Icarus / Verilog generated files
+a.out
+*_tb
+*_sim
+*_compile
+
+# Simulation directories
+cocotb/
+cocotb_sim/
+cocotb_sim_axi/
+
+# Temporary output/log files
+*.log
+*.txt
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# V2 development - keep out of current V1 commit
+v2/

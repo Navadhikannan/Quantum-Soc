@@ -24,8 +24,15 @@ module instruction_memory #(
     // Load Program
     //========================================================
 
-    initial begin
-        $readmemh(MEM_FILE, memory);
+    integer i;
+
+ initial begin
+    // Initialize all memory locations to NOP
+    for (i = 0; i < DEPTH; i = i + 1)
+        memory[i] = 32'h00000013;
+
+    // Load your program over the initialized memory
+    $readmemh(MEM_FILE, memory);
     end
 
     //========================================================
